@@ -1,38 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#credit {
+  position: absolute;
+  bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#credit a{
+  color: white;
+  font-size: 14px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#wrapper {
+  width: 350px;
+  border: 3px solid #5950c8;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+#display-wrapper {
+  height: 60px;
+  background-color: #fbf887;
+  margin: 5px;
+  padding: 5px;
+  font-family: 'Pangolin', cursive;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#expression {
+  font-size: medium;
+}
+
+#click {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 70px);
+  grid-template-areas: 
+  'clear clear divide multiply'
+  'seven eight nine subtract'
+  'four five six add'
+  'one two three equals'
+  'zero zero decimal equals';
+  margin: 5px;
+  gap: 3px;
+}
+
+.clear {
+  background-color: #fea0e5;
+}
+
+.operator {
+  background-color: #fdc977;
+}
+
+.number {
+  background-color: #78c2f8;
+}
+
+.buttonClass {
+  border: none;
+  border-radius: 2px;
+  font-family: 'Pangolin', cursive;
+  font-size: x-large;
+}
+
+body {
+  background: url('https://cdn.discordapp.com/attachments/799558368657801239/983003427787407430/1989429.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+}
+
+@media (max-width: 500px) {
+  #credit a{
+    font-size: 12px;
   }
-  to {
-    transform: rotate(360deg);
+  #click {
+    grid-template-rows: repeat(5, 65px);
   }
+  #wrapper {
+    width: 320px;
+  }
+  
 }
